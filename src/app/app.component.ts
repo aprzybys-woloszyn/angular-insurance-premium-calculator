@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
   title = 'angular-insurance-premium-calculator';
-  value: any = 5550;
+  value: number = 5550;
   clc: number = 0;
 
   public insuranceForm: FormGroup = new FormGroup({
@@ -16,10 +16,10 @@ export class AppComponent {
   });
 
   addOne() {
-    this.value++;
+    if (this.value < 10000) this.value++;
   }
   removeOne() {
-    this.value--;
+    if (this.value > 100) this.value--;
   }
 
   updateSetting(event: any) {
